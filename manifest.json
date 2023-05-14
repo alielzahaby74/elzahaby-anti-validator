@@ -1,0 +1,22 @@
+{
+    "name": "elzahaby/anti-validation",
+    "short_name": "elzahaby/anti-validation",
+    "manifest_version": 2,
+    "version": "1.0",
+    "description": "have complete control over the validation process",
+    "author": "Ali Elzahaby",
+    "content_scripts": [
+        {
+            "matches": ["*://*/*"],
+            "js": ["content_script.js"]
+        }
+    ],
+    "browser_action": {
+        "default_popup": "popup.html"
+    },
+    "action": {
+        "default_popup": "popup.html",
+        "default_title": "Click Me!",
+        "default_icon": "Input_x.png"
+    }
+}
