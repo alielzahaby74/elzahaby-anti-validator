@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let isEmailToText = localStorage.getItem("isEmailToText") ? localStorage.getItem("isEmailToText") : false;
     let isNumberToText = localStorage.getItem("isNumberToText") ? localStorage.getItem("isNumberToText") : false;
 
-    if(isRequired === "true"|| isEmailToText === "true" || isNumberToText === "true") {
+    if(checkBoolean(isRequired) || checkBoolean(isEmailToText) || checkBoolean(isNumberToText)) {
         sendData();
         setOldValues();
     }
@@ -36,3 +36,9 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById("number-to-text").checked = isNumberToText === "true" ? true : false;
       }
   });
+
+  function checkBoolean($value) {
+    if($value === "true" || $value === true || $value === 1 || $value === "1")
+        return true;
+    return false;
+  }
